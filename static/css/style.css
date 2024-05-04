@@ -1,0 +1,115 @@
+/* Overall body and layout styles */
+body {
+    font-family: 'Arial', sans-serif; /* Clean, modern font */
+    background-color: #f4f4f4; /* Light grey background */
+    color: #333; /* Dark grey text for better readability */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+/* Container for the form */
+.form-container {
+    background-color: #ffffff; /* White background for the form */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 300px;
+}
+
+/* Style for form elements */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styles for labels */
+label {
+    font-size: 16px; /* Slightly larger font size for readability */
+    margin-bottom: 5px; /* Space between label and input */
+}
+
+/* Universal styles for text input and number input */
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    margin-bottom: 20px; /* More space between fields */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Rounded borders for the input fields */
+    font-size: 16px; /* Larger font size for easy reading */
+    outline: none; /* Remove the outline to avoid distraction */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #0056b3; /* Highlight focus with a blue border */
+}
+
+/* Styling for submit button */
+button {
+    background-color: #007bff; /* Bright blue background for the button */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px; /* Rounded borders for the button */
+    font-size: 16px; /* Uniform font size with input fields */
+    cursor: pointer; /* Cursor indicates clickable button */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover for better interaction feedback */
+}
+
+
+
+
+/* Styling display_json.html Page */
+
+#jsonDataDisplay {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#jsonDataDisplay h4 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+#jsonData {
+    margin-top: 30px;
+    font-size: 16px;
+    color: #1903c0;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-align: left;
+}
+
+#backButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #e3c999;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#backButton:hover {
+    background-color: #ea8e04;
+}

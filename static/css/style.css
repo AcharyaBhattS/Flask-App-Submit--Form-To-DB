@@ -8,10 +8,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     margin: 0;
 }
-
 
 /* Container for the form */
 .form-container {
@@ -20,6 +19,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     width: 300px;
+    margin: 10px;
 }
 
 /* Style for form elements */
@@ -43,16 +43,20 @@ input[type="number"] {
     border-radius: 4px; /* Rounded borders for the input fields */
     font-size: 16px; /* Larger font size for easy reading */
     outline: none; /* Remove the outline to avoid distraction */
+    border-color: #0056b3;
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus {
-    border-color: #0056b3; /* Highlight focus with a blue border */
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
 }
+
 
 /* Styling for submit button */
 button {
-    background-color: #007bff; /* Bright blue background for the button */
+    background-color: #3d6795; /* Bright blue background for the button */
     color: white;
     padding: 10px;
     border: none;
@@ -66,6 +70,139 @@ button:hover {
     background-color: #0056b3; /* Darker blue on hover for better interaction feedback */
 }
 
+
+
+/* Table */
+.table-container {
+    background-color: #ffffff; /* White background for the form */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 850px;
+    margin: 20px;
+}
+
+table {
+    table-layout: fixed;
+    /* table-layout: auto; */
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    /* overflow:visible; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    white-space: normal; /* Allow text to wrap */
+}
+
+th {
+    background-color: #f7f7f7;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f6f9cc;
+    transition: background-color 0.3s;
+}
+
+/* Column specific styles */
+.name { width: 20%; }
+.email {
+    width: 35%;
+    word-wrap: break-word; /* Ensure text wraps to prevent overflow */
+}
+.age { width: 5%; }
+.address { width: 35%; }
+.created-on { width: 15%; }
+.actions { width: 12%; }
+
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+form {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+input[type="text"],
+input[type="submit"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+
+#TableButtonEdit {
+    margin-top: 10px;
+    padding: 5px 20px;
+    background-color: #6faf6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#TableButtonEdit:hover {
+    background-color: #0de305;
+}
+
+
+#TableButtonDelete {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #e1ae8a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#TableButtonDelete:hover {
+    background-color: #ea2e04;
+}
+
+
+#ButtonShowJson {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #b1996b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#ButtonShowJson:hover {
+    background-color: #ea8e04;
+}
 
 
 

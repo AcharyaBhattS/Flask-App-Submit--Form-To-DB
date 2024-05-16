@@ -4,40 +4,81 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Form Submission</title>
-        <link
-            rel="shortcut icon"
-            type="image/png"
-            href="/static/img/speedometer_title.png">
+        <link rel="shortcut icon" type="image/png" href="/static/img/speedometer_title.png">
         <link rel="stylesheet" href="/static/css/style.css">
     </head>
 
     <body>
-        <div class="form-container">
-            <center>
-                <h3>
-                    Submit Form Data
+        <div>
+            <div class="form-container">
+                <h3><center>Submit User Details</center></h3>
+                <form action="{{ url_for('index' if not sldata else 'edit', pk=sldata.id if sldata else None) }}" method="post" enctype="multipart/form-data">
+                    <div class="mb-1">
+                        <label for="name"><b>Name</b><span style="color: red;">*</span>:</label>
+                        <input type="text" id="name" name="name" value="{{ sldata.name if sldata else '' }}" required placeholder="Enter your name">
+                    </div>
+                    <div class="mb-1">
+                        <label for="email"><b>Email ID</b><span style="color: red;">*</span>:</label>
+                        <input type="text" id="email" name="email" value="{{ sldata.email if sldata else '' }}" required placeholder="Enter your email">
+                    
+                        <!-- <textarea id="email" name="email" placeholder="Enter your email" required>{{ sldata.email if sldata else '' }}</textarea> -->
+                    </div>
+                    <div class="mb-1">
+                        <label for="age"><b>Age</b><span style="color: red;">*</span>:</label>
+                        <input type="number" id="age" name="age" value="{{ sldata.age if sldata else '' }}" required placeholder="Enter your age">
+                    </div>
+                    <div class="mb-1">
+                        <label for="address"><b>Address</b></label>
+                        <textarea id="address" name="address" placeholder="Enter your address">{{ sldata.address if sldata else '' }}</textarea>
+                    </div>
                     <br>
-                    And Show the Data as JSON
-                </h3>
-                <br>
+                    <div>
+                        <center><button type="submit">Submit</button></center>
+                    </div>
+                </form>
+            </div>
+
+            <div>
+                <center><a href="{{ url_for('display_json') }}"></a><button type="button" id="ButtonShowJson">Show the last data in JSON format</button></a></center>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <div>
+                <center><h3>Submitted Data</h3></center>
+            </div>
+            <center>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="name"><center>Name</center></th>
+                            <th class="email"><center>Email</center></th>
+                            <th class="age"><center>Age</center></th>
+                            <th class="address"><center>Address</center></th>
+                            <th class="created-on"><center>Created On</center></th>
+                            <th class="actions"><center>Action</center></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for sbmdt in submitteddata %}
+                            <tr>
+                                <td>{{ sbmdt.name }}</td>
+                                <td>
+                                    {{ sbmdt.email.split('@')[0] }}<br>
+                                    <span>@{{ sbmdt.email.split('@')[1] }}</span>
+                                </td>
+                                <td>{{ sbmdt.age }}</td>
+                                <td>{{ sbmdt.address }}</td>
+                                <td>{{ sbmdt.created_on }}</td>
+                                <td>
+                                    <a href="{{ url_for('edit', pk=sbmdt.id) }}"><button type="button" id="TableButtonEdit">Edit</button></a>
+                                    <a href="{{ url_for('delete', pk=sbmdt.id) }}"><button type="button" id="TableButtonDelete">Delete</button></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </center>
-            <form action="/submit" method="post">
-                <label for="name"><b>Name</b><span style="color: red;">*</span>:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email"><b>Email ID</b><span style="color: red;">*</span>:</label>
-                <input type="text" id="email" name="email" required>
-
-                <label for="age"><b>Age</b><span style="color: red;">*</span>:</label>
-                <input type="number" id="age" name="age" required>
-
-                <label for="address"><b>Address</b></label>
-                <!-- <input type="text" id="address" name="address"> -->
-                <textarea id="address" name="address"></textarea>
-
-                <br><br>                
-                <button type="submit">Submit</button>
-            </form>
         </div>
     </body>
 </html>

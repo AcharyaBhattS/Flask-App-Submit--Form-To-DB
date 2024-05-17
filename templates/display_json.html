@@ -11,10 +11,11 @@
             <h4>Form Data converted into JSON format</h4>
             <pre id="jsonData">
                 {
-                    "name": "{{ request.args.get('name') }}",
-                    "email": "{{ request.args.get('email') }}",
-                    "age": "{{ request.args.get('age') }}",
-                    "address": "{{ request.args.get('address') }}"
+                    "name": "{{ lastjsondata.name }}",
+                    "email": "{{ lastjsondata.email }}",
+                    "age": "{{ lastjsondata.age }}",
+                    "address": "{{ lastjsondata.address }}",
+                    "created_on": "{{ lastjsondata.created_on }}"
                 }
             </pre>
 

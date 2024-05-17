@@ -127,15 +127,15 @@ def edit(pk):
 
 
 # Display JSON Data
-@app.route('/display_json')
+@app.route('/display_json', methods=['GET', 'POST'])
 def display_json():
     conn = get_db_connection()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM records ORDER BY id DESC LIMIT 1")
+    cursor.execute("SELECT * FROM sbforms ORDER BY id DESC LIMIT 1")
     last_record = cursor.fetchone()
-    print(last_record)
-    return render_template('display_json.html')
-
+    # for i in last_record:
+    #     print(i)
+    return render_template('display_json.html', lastjsondata=last_record)
 
 
 # Delete Row data

@@ -25,7 +25,7 @@
 
 
 #### iii. Display the Data in JSON Format
- ![CustomerTableView](static/img/git_images/display_in_json_format.png "User Data in JSON format") <br>
+ ![CustomerTableView](static/img/git_images/Form_data_in_JSON_format.png "User Data in JSON format") <br>
 
 #### iv. Generate a JSON file (rename with current date and time) containing the same Form Data.
  ![CustomerTableView](static/img/git_images/json_files.png "JSON files") <br>
